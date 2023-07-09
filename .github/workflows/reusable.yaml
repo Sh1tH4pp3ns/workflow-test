@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "abc"
-      - run: echo inputs.id
+      - run: echo ${{ inputs.id }}
