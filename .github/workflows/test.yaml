@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       test: ${{ vars.ACCOUNT_ID }}
+      ${{ matrix.environment }}: test
     steps:
       - run: ':'
     
