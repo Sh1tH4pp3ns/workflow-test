@@ -5,4 +5,4 @@ jobs:
   something:
     runs-on: ubuntu-latest
     steps:
-      - run: "abc"
+      - run: echo "abc"
