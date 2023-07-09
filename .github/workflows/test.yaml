@@ -1,8 +1,12 @@
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
   
 jobs:
   print:
     uses: ./.github/workflows/reusable.yaml
     with:
+      environment: ${{ inputs.environment }}
       id: ${{ vars.ACCOUNT_ID }}
