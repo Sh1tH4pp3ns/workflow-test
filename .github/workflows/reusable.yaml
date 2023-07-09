@@ -1,8 +1,12 @@
 on:
   workflow_call:
+    inputs:
+      id:
+        type: string
 
 jobs:
   something:
     runs-on: ubuntu-latest
     steps:
       - run: echo "abc"
+      - run: echo inputs.id
