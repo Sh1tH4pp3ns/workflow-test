@@ -3,4 +3,4 @@ on:
   
 jobs:
   print:
-    uses: .github/workflows/reusable.yaml@main
+    uses: ./.github/workflows/reusable.yaml
