@@ -5,8 +5,17 @@ on:
         type: environment
   
 jobs:
+  env:
+    environment: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    outputs:
+      test: ${{ vars.ACCOUNT_ID }}
+    steps:
+      - run: ':'
+    
   print:
+    needs: env
     uses: ./.github/workflows/reusable.yaml
     with:
       environment: ${{ inputs.environment }}
-      id: ${{ vars.ACCOUNT_ID }}
+      id: ${{ needs.env.outputs.test }}
