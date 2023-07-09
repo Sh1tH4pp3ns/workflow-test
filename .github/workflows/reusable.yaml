@@ -3,9 +3,12 @@ on:
     inputs:
       id:
         type: string
+      environment:
+        type: string
 
 jobs:
   something:
+    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "abc"
