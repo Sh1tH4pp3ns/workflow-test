@@ -6,7 +6,10 @@ on:
   
 jobs:
   env:
-    environment: ${{ inputs.environment }}
+    strategy:
+      matrix:
+        env: [ 'standby', 'staging' ]
+    environment: ${{ matrix.environment }}
     runs-on: ubuntu-latest
     outputs:
       test: ${{ vars.ACCOUNT_ID }}
@@ -15,6 +18,9 @@ jobs:
     
   print:
     needs: env
+    strategy:
+      matrix:
+        env: [ 'standby', 'staging' ]
     uses: ./.github/workflows/reusable.yaml
     with:
       environment: ${{ inputs.environment }}
