@@ -5,4 +5,4 @@ jobs:
   print:
     uses: ./.github/workflows/reusable.yaml
     with:
-      id: vars.ACCOUNT_ID
+      id: ${{ vars.ACCOUNT_ID }}
